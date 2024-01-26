@@ -12,8 +12,11 @@ const getById = id => {
   //select * from accounts where id = whatever
 }
 
-const create = account => {
+const create = async account => {
   // DO YOUR MAGIC
+  const [id] = await db('accounts').insert(account)
+  return getById(id)
+  //insert into accounts (name, budget) values ('someName, 1000)
 }
 
 const updateById = (id, account) => {
