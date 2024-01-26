@@ -23,6 +23,7 @@ const updateById = async (id, account) => {
   // DO YOUR MAGIC
   await db('accounts').where('id', id).update(account)
   return getById(id)
+  //update accountsset name='SomeName' budget=1000 where id=whatever
 }
 
 const deleteById = id => {
